@@ -66,8 +66,13 @@ body  {
 <body>
     <div class="container">
         <h1 style="color:red;" align="center">Prediction Result</h1>
+    <!--{url_for} this is a flask function that generates the URL for a specific route. -->
+        <!-- {{ }} is part of the template engine syntax Flask frameworks -->
         <center><img src="{{ url_for('uploaded_file', filename=os.path.basename(image_path)) }}" alt="Uploaded Image"> </center>
+        
+        <!-- {{ result }} This is template (jinja2) syntax, used to dynamically insert the result variable -->
         <p align="center">{{ result }}</p>
+
         <center> <p>Prediction Probability: {{ pred_percentage }}%</p> </center>
     </div>
 </body>
